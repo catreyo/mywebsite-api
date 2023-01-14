@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 
-app.get("/api/movies", (req, res) => {
+app.get("/movies", (req, res) => {
   axios.get('https://api.themoviedb.org/4/account/63aa272cb3316b007a8c0722/movie/rated', {
     params: {
       page: req.query.page
@@ -32,7 +32,7 @@ app.get("/api/movies", (req, res) => {
   .catch((err) => console.log(err));
 });
 
-app.get("/api/shows", (req, res) => {
+app.get("/shows", (req, res) => {
   axios.get('https://api.themoviedb.org/4/account/63aa272cb3316b007a8c0722/tv/rated', {
     params: {
       page: req.query.page
@@ -54,7 +54,7 @@ app.get("/api/shows", (req, res) => {
   .catch((err) => console.log(err));
 });
 
-app.get("/api/books", (req, res) => {
+app.get("/books", (req, res) => {
   base('Books').select({
     view: 'Grid view'
   }).firstPage(function(err, records) {
