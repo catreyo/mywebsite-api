@@ -4,7 +4,11 @@ const express = require("express");
 const axios = require("axios");
 
 var Airtable = require('airtable');
-var base = new Airtable({apiKey: process.env.AIRTABLE}).base('appAHV7tmLu00dtqm');
+Airtable.configure({
+    endpointUrl: 'https://api.airtable.com',
+    apiKey: process.env.AIRTABLE_API_KEY
+});
+var base = Airtable.base('appAHV7tmLu00dtqm');
 
 const PORT = process.env.PORT || 4000;
 
