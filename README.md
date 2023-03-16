@@ -2,8 +2,8 @@
 This is the Node.js Express.js api that provides data to my personal website.
 Here are the key enpoints, which can be reached at [https://atreyo-api.onrender.com](https://atreyo-api.onrender.com)/{endpoint}:
 ### /movies
-Uses axios to call the TMDB api to retreive a list of movies and my ratings for them, then sorts the values by rating and returns the list.
+Uses airtable to retreive a list of movie ids the corresponding ratings for them. The ids are used in the client to populate movie data.
 ### /shows
-Uses axios to call the TMDB api to retreive a list of tv shows and my ratings for them, then sorts the values by rating and returns the list.
+Uses airtable to retreive a list of show ids the corresponding ratings for them. The ids are used in the client to populate show data.
 ### /books
-Uses the airtable library to retreive data from an airtable database containing information about books I've read and what I rate them.
+Uses airtable to retreive a list of books, including metadata, and the rating associated with each.
